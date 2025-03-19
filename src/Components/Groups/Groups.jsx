@@ -14,9 +14,9 @@ const Groups = () => {
   const handleClick = (group) => {
     console.log("Selected group before updating store: ", group);
     dispatch(setSelectedGroup(group));
-    if (window.innerWidth < 600) {
-      dispatch(setShowNotes(true));
-    }
+    // if (window.innerWidth < 600) {
+    //   dispatch(setShowNotes(true));
+    // }
   };
 
   return (
