@@ -1,0 +1,136 @@
+.overlayContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.overlayContainer .createGroupPopup {
+    background: #fff;
+    padding: 25px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor:auto;
+}
+
+.overlayContainer .createGroupPopup .nameInputSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.colorSection{
+    display: flex;
+    align-items: center;
+}
+
+.nameInputSection input{
+    outline: none;
+    border:1px solid #cfcdcd;
+    width: 100%;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+.nameInputSection input::placeholder{
+    color: #CCCCCC;
+}
+
+.colorContainer{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.createGroupPopup .color{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.colors{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+
+.createBtn{
+    width: fit-content;
+    background-color: #001F8B;
+    color: #fff;
+    outline: none;
+    border-radius: 8px;
+    padding: 5px 25px;
+    cursor: pointer;
+    margin-left: 75%;
+}
+
+.createBtn:hover{
+    background-color: #a2a4ab;
+}
+
+.input_warningsSection{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input_warning{
+    color: red;
+    font-size: 12px;
+}
+
+
+@media screen and (max-width:850px) {
+    .overlayContainer .createGroupPopup{
+        width: 50%;
+    }
+    .colors{
+        justify-content:right;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .overlayContainer .createGroupPopup{
+        width: 80%;
+        padding: 25px;
+        margin: 10px;
+    }
+    .colors{
+        /* flex-wrap: nowrap; */
+        gap: 5px;
+        justify-content: left;
+    }
+    .createGroupPopup .color{
+        height: 20px ;
+        width: 20px ;
+    }
+    .overlayContainer .createGroupPopup .nameInputSection{
+        justify-content:left;
+    }
+    .createBtn{
+        width: fit-content;
+        background-color: #001F8B;
+        color: #fff;
+        outline: none;
+        border-radius: 8px;
+        padding: 3px 55px;
+        cursor: pointer;
+        margin: auto;
+    }
+}

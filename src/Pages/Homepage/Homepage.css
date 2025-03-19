@@ -1,0 +1,7 @@
+.homeContainer{
+    background-color: #ffffff;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}

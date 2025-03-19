@@ -1,0 +1,115 @@
+.groupContainer {
+  padding-top: 40px;
+  height: auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.groupContainer span {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.addGroupBtn {
+  width: fit-content;
+  padding: 0 18px;
+  border-radius: 100%;
+  background-color: #16008b;
+  color: #ffffff;
+  font-size: 60px;
+  position: sticky;
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  bottom: 40px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.addGroupBtn:hover {
+  background-color: #0260f7;
+}
+
+.groupSection {
+  margin-top: 40px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.groupSection::-webkit-scrollbar {
+  width: 7px;
+}
+.groupSection::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 40px;
+    min-height: 50px;
+}
+.groupSection::-webkit-scrollbar-thumb:hover {
+    background: #7e7d7d;
+    cursor: pointer;
+}
+.groupSection::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.group {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 45px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.group:hover {
+  background-color: #dcdcdc;
+}
+
+.group .initial {
+  height: fit-content;
+  width: 30px;
+  font-size: 20px;
+  color: #ffffff;
+  border-radius: 100%;
+  padding: 15px 12px;
+  text-align: center;
+}
+
+.group .groupName {
+  font-size: large;
+  font-weight: 500;
+}
+
+
+@media screen and (max-width:1000px) {
+  .groupContainer{
+    width: 50%;
+    height: auto;
+    }
+    .group {
+      padding-left: 65px;
+    }
+}
+@media screen and (max-width:760px) {
+  .groupContainer{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:460px) {
+  .group{
+    gap: 25px;
+    padding-left: 45px;
+    justify-content: left;
+  }
+}
