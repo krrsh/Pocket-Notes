@@ -12,21 +12,22 @@ const Groups = () => {
   const groups = useSelector((state) => state.notedata.groups);
 
   const handleClick = (group) => {
-    console.log("Selected group before updating store: ", group);
-    dispatch(setSelectedGroup(group));
-    // if (window.innerWidth < 600) {
-    //   dispatch(setShowNotes(true));
-    // }
+    const groups = JSON.parse(localStorage.getItem("groups")) || [];
+    const updatedGroup = groups.find((g) => g.id === group.id) || group;
+    dispatch(setSelectedGroup(updatedGroup));
+    if (window.innerWidth < 600) {
+      dispatch(setShowNotes(true));
+    }
   };
 
   return (
     <div className="groupContainer">
       <span>Pocket Notes</span>
       <div className="groupSection">
-        {groups.map((group) => {
+        {groups.map((group, index) => {
           return (
             <div
-              key={group.id}
+              key={index}
               onClick={() => handleClick(group)}
               className="group"
             >

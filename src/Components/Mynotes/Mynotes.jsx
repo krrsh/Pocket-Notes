@@ -17,7 +17,7 @@ const Mynotes = () => {
 
   //selected group
   const selectedGroup = useSelector((state) => state.notedata.selectedGroup);
-  const notesCollection = selectedGroup.notes || [];
+  const notesCollection = selectedGroup.notes;
 
   //getting the notes input
   const [notesData, setNotesData] = useState({
@@ -46,7 +46,6 @@ const Mynotes = () => {
       }),
     };
 
-
     //getting, matching and setting the selectedgroup data to the localstorage
     const groups = JSON.parse(localStorage.getItem("groups")) || [];
 
@@ -61,18 +60,27 @@ const Mynotes = () => {
     });
     localStorage.setItem("groups", JSON.stringify(update_Groups));
 
-    dispatch(
-      setSelectedGroup({
-        ...selectedGroup,
-        notes: selectedGroup.notes
-          ? [...selectedGroup.notes, newNote]
-          : [newNote],
-      })
-    );
+
+
+    const updatedGroup = update_Groups.find(g => g.id === selectedGroup.id);
 
     dispatch(setGroups(update_Groups));
+    dispatch(setSelectedGroup(updatedGroup)); 
+
+
+
+    // dispatch(
+    //   setSelectedGroup({
+    //     ...selectedGroup,
+    //     notes: selectedGroup.notes
+    //       ? [...selectedGroup.notes, newNote]
+    //       : [newNote],
+    //   })
+    // );
+
     // Reset input
     setNotesData({ notes: "", date: "", time: "" });
+    console.log("group : ", groups)
   };
 
   //enter key
