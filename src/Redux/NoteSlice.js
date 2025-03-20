@@ -19,7 +19,7 @@ const noteSlice = createSlice({
       state.showNotes  =  action.payload
     }),
     setIsMobile:((state, action)=>{
-      state.showNotes  =  action.payload
+      state.isMobile  =  action.payload
     })
   },
 })

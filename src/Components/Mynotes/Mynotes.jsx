@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import bg_img from "../../assets/bg_image.png";
 import encrypt_icon from "../../assets/Vector.png";
 import "./Mynotes.css";
